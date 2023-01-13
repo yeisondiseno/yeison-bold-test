@@ -1,0 +1,37 @@
+@import "../../../styles/_vars";
+@import "../../../styles/_mixins.scss";
+
+.m-header {
+  @include mode_flex(row, center, center);
+  width: 100%;
+  background: linear-gradient(90deg, $primary, $secondary-dark);
+
+  &__container {
+    @include mode_flex(row, center, space-between);
+    width: 100%;
+    max-width: max-width;
+    padding: 20px;
+    img {
+      width: 100%;
+      max-width: 120px;
+      cursor: pointer;
+    }
+
+    nav {
+      @include mode_flex(row, center, space-between);
+      a {
+        color: $white;
+        text-decoration: none;
+        padding: 8px 15px;
+        margin-left: 10px;
+        cursor: pointer;
+        transition: $transition;
+        border-radius: 5px;
+
+        &:hover {
+          background-color: $primary;
+        }
+      }
+    }
+  }
+}
