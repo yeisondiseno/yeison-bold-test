@@ -7,3 +7,10 @@
   align-items: $align;
   justify-content: $justify;
 }
+
+// Media queries
+@mixin from($size) {
+  @media (max-width: $size) {
+    @content;
+  }
+}

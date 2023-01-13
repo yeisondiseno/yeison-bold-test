@@ -11,6 +11,16 @@
     width: 100%;
     max-width: max-width;
     padding: 20px;
+
+    &__hamburger {
+      border: none;
+      font-size: 16px;
+      background-color: rgba($color: $white, $alpha: 0.2);
+      color: $white;
+      padding: 8px 10px;
+      border-radius: 5px;
+    }
+
     img {
       width: 100%;
       max-width: 120px;
@@ -21,6 +31,7 @@
       @include mode_flex(row, center, space-between);
       a {
         color: $white;
+        font-size: 14px;
         text-decoration: none;
         padding: 8px 15px;
         margin-left: 10px;
@@ -31,6 +42,33 @@
         &:hover {
           background-color: $primary;
         }
+      }
+
+      a svg {
+        margin-left: 10px;
+      }
+    }
+
+    &.toggle {
+      @include mode_flex(column, flex-start, flex-start);
+      position: fixed;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 250px;
+      background-color: $primary;
+      transition: $transition;
+
+      &.close {
+        transform: translateX(500px);
+      }
+
+      button {
+        margin-bottom: 20px;
+      }
+
+      nav {
+        @include mode_flex(column, center, space-between);
       }
     }
   }
